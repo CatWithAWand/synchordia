@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.catwithawand.synchordia.layout.BootstrapPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<BootstrapPane xmlns="http://javafx.com/javafx"
+               xmlns:fx="http://javafx.com/fxml"
+               fx:id="root"
+               minWidth="450.0"
+               minHeight="445.0"
+            >
+    <VBox>
+        <children>
+
+        </children>
+    </VBox>
+</BootstrapPane>

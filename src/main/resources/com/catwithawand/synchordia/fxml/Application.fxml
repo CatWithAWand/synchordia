@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.stage.Screen?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:id="root" id="root"
+            styleClass="bg-black, rounded-lg" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <children>
+        <BorderPane fx:id="appBorderPane" id="root-border-pane" styleClass="bg-black, rounded-lg"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <MigPane fx:id="appCenterMigPane" id="center-grid-pane" styleClass="bg-black"
+                         BorderPane.alignment="CENTER" layout="fill, insets 0"
+                         cols="[320:320:320]10[450::, fill, grow]" rows="[445::, fill, grow]">
+                    <BorderPane id="main-content-border-pane" styleClass="bg-black, rounded-lg">
+                        <center>
+                            <ScrollPane fx:id="mainContentScrollPane" id="main-content-scroll-pane"
+                                        styleClass="bg-quaternary, rounded-lg" fitToWidth="true"
+                                        BorderPane.alignment="CENTER">
+                            </ScrollPane>
+                        </center>
+                    </BorderPane>
+                </MigPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

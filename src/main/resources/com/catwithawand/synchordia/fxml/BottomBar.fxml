@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.BorderPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?import com.catwithawand.synchordia.control.CustomSlider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+
+<?import com.catwithawand.synchordia.control.PlayPauseButton?>
+<MigPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" id="bottombar"
+         BorderPane.alignment="CENTER"
+         layout="fill, insets 0" cols="[::24%, fill][::49%, fill][::24%, fill]"
+         rows="[fill, grow]">
+    <HBox id="track-info" alignment="CENTER_LEFT" MigPane.cc="cell 0 0, left">
+        <children>
+            <ImageView fx:id="trackImageView" id="track-image-view" nodeOrientation="INHERIT" pickOnBounds="true"
+                       preserveRatio="true" smooth="false" fitHeight="56.0" fitWidth="56.0"/>
+            <VBox id="track-info-labels" alignment="CENTER_LEFT">
+                <children>
+                    <Label fx:id="trackTitleLabel" id="track-title-label" text="Track Title"/>
+                    <Label fx:id="trackArtistLabel" id="track-artist-label" text="Artist Name"/>
+                </children>
+            </VBox>
+        </children>
+    </HBox>
+    <VBox fx:id="musicControlsVbox" id="music-controls" alignment="CENTER" MigPane.cc="cell 1 0, center">
+        <children>
+            <HBox id="music-playback-controls" alignment="CENTER">
+                <children>
+                    <VBox styleClass="shuffle-repeat-buttons" alignment="CENTER">
+                        <FontIcon iconLiteral="remixmz-shuffle-line" styleClass="playback-icon"/>
+                    </VBox>
+                    <VBox styleClass="skip-buttons" alignment="CENTER">
+                        <FontIcon iconLiteral="mdrmz-skip_previous" styleClass="playback-icon"/>
+                    </VBox>
+                    <PlayPauseButton fx:id="playPauseBtn" id="main-play-pause-button" alignment="CENTER"
+                                     onMouseClicked="#handlePlayPauseBtnClick"/>
+                    <VBox styleClass="skip-buttons" alignment="CENTER">
+                        <FontIcon iconLiteral="mdrmz-skip_next" styleClass="playback-icon"/>
+                    </VBox>
+                    <VBox styleClass="shuffle-repeat-buttons" alignment="CENTER"
+                          onMouseClicked="#handleRepeatBtnClick">
+                        <FontIcon fx:id="repeatIcon" iconLiteral="remixmz-repeat-2-line" styleClass="playback-icon"/>
+                    </VBox>
+                </children>
+            </HBox>
+            <MigPane id="music-time-controls" layout="fill"
+                     cols="[::5%]7[::90%, fill, grow, center]7[::5%]">
+                <Label fx:id="timeElapsedLabel" styleClass="track-time-text" text="0:00"
+                       MigPane.cc="cell 0 0, center"/>
+                <CustomSlider fx:id="progressSlider" id="track-progress-slider" MigPane.cc="cell 1 0, center"/>
+                <Label fx:id="totalDurationLabel" styleClass="track-time-text" text="0:00"
+                       MigPane.cc="cell 2 0, center"/>
+            </MigPane>
+        </children>
+    </VBox>
+    <HBox fx:id="musicExtraControlsHBox" id="music-extra-controls" alignment="CENTER_RIGHT"
+          MigPane.cc="cell 2 0, right">
+        <children>
+            <VBox styleClass="extra-controls-button" alignment="CENTER">
+                <FontIcon iconLiteral="mdrmz-queue_music" styleClass="extra-controls-icon"/>
+            </VBox>
+            <VBox styleClass="extra-controls-button" alignment="CENTER"
+                  onMouseClicked="#handleVolumeBtnClick">
+                <FontIcon fx:id="volumeIcon" iconLiteral="fltrmz-speaker-1-16" styleClass="extra-controls-icon"/>
+            </VBox>
+            <CustomSlider fx:id="volumeSlider" id="music-volume-slider"/>
+            <VBox styleClass="extra-controls-button" alignment="CENTER">
+                <FontIcon iconLiteral="fltfmz-more-16" styleClass="extra-controls-icon"/>
+            </VBox>
+        </children>
+    </HBox>
+</MigPane>

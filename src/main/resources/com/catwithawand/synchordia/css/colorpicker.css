@@ -1,0 +1,25 @@
+.custom-color-dialog {
+    -fx-background-color: -background-quaternary;
+    -fx-background-radius: 8px;
+    -fx-background-insets: 0px;
+    -fx-padding: 15px;
+
+    -fx-border-color: #4E4F50;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.customcolor-controls-background {
+    -fx-background-color: -background-quaternary;
+}
+
+.webcolor-field, .color-input-field {
+    -fx-background-color: -background-primary;
+    -fx-text-fill: white;
+    -fx-fill: white;
+}
+
+.custom-color-dialog .label, .custom-color-dialog .settings-label, .custom-color-dialog .text {
+    -fx-text-fill: white;
+    -fx-fill: white;
+}

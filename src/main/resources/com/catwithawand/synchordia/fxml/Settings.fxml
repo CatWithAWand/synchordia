@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import org.controlsfx.control.ToggleSwitch?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.control.Button?>
+<?import org.kordamp.ikonli.javafx.StackedFontIcon?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:id="rootSettings"
+          id="settings-root" alignment="CENTER">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="75.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" percentHeight="100.0"/>
+    </rowConstraints>
+    <VBox>
+        <children>
+            <Label text="Settings"/>
+            <VBox>
+                <children>
+                    <Label text="Personalization" styleClass="setting-title"/>
+                    <BorderPane prefWidth="Infinity">
+                        <left>
+                            <Label text="Accent color" styleClass="setting-description"></Label>
+                        </left>
+                        <right>
+                            <HBox id="accent-picker-container" alignment="CENTER">
+                                <VBox fx:id="accentColor"/>
+                                <VBox id="accent-picker-btn" onMouseClicked="#handleAccentPickerBtnClick"
+                                      alignment="CENTER">
+                                    <FontIcon iconLiteral="mdrmz-palette"
+                                              styleClass="accent-picker-icon"/>
+                                </VBox>
+                            </HBox>
+                        </right>
+                    </BorderPane>
+                </children>
+            </VBox>
+            <VBox>
+                <children>
+                    <Label text="Metadata"/>
+                    <BorderPane prefWidth="Infinity">
+                        <left>
+                            <Label text="Automatically fetch and apply metadata"></Label>
+                        </left>
+                        <right>
+                            <ToggleSwitch fx:id="metadataToggleSwitch"/>
+                        </right>
+                    </BorderPane>
+                </children>
+            </VBox>
+            <VBox>
+                <children>
+                    <Label prefHeight="17.0" prefWidth="150.0" text="Music Libraries"/>
+                    <Accordion>
+                        <panes>
+                            <TitledPane animated="false" text="Locations">
+                                <content>
+                                    <ListView minHeight="200.0" prefWidth="200.0"/>
+                                </content>
+                            </TitledPane>
+                        </panes>
+                    </Accordion>
+                </children>
+            </VBox>
+        </children>
+    </VBox>
+</GridPane>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import com.catwithawand.synchordia.control.SimpleActionButton?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="sidebar" xmlns="http://javafx.com/javafx/17"
+          id="sidebar" alignment="CENTER" prefHeight="810.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="400.0" minWidth="200.0" percentWidth="95.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" minHeight="450.0" percentHeight="100.0"/>
+    </rowConstraints>
+    <VBox alignment="TOP_CENTER" prefWidth="320.0" spacing="11.0">
+        <children>
+            <CustomTextField fx:id="searchBox" id="search-box" alignment="CENTER" prefHeight="34.0" minHeight="34.0"
+                             prefWidth="290.0"/>
+            <VBox id="sidebar-top" alignment="TOP_CENTER" prefWidth="320.0">
+                <children>
+                    <SimpleActionButton fx:id="homeBtn" id="home-button" styleClass="navigation-button"
+                                        leftIconLiteral="fltfal-home-20" text="Home" textPosition="LEFT"
+                                        staticIcons="true" onMouseClicked="#handleHomeBtnClick"/>
+                    <SimpleActionButton fx:id="musicLibraryBtn" id="create-playlist-button"
+                                        styleClass="navigation-button"
+                                        leftIconLiteral="mdi2m-music" text="Music Library" textPosition="LEFT"
+                                        staticIcons="true" onMouseClicked="#handleMusicLibraryBtnClick"/>
+                    <SimpleActionButton fx:id="likedSongsBtn" id="liked-songs-button" styleClass="navigation-button"
+                                        leftIconLiteral="mdral-favorite" text="Liked Songs"
+                                        onMouseClicked="#handleLikedSongsBtnClick" textPosition="LEFT"
+                                        staticIcons="true"/>
+                    <SimpleActionButton fx:id="createPlaylistBtn" id="create-playlist-button"
+                                        styleClass="navigation-button" leftIconLiteral="mdral-add_box"
+                                        text="Create Playlist" textPosition="LEFT" staticIcons="true"/>
+                </children>
+            </VBox>
+            <Pane id="sidebar-divider"/>
+            <VBox id="playlist-list"/>
+        </children>
+    </VBox>
+</GridPane>

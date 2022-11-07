@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_PATTERN">[%-23d{yyyy-MM-dd/HH:mm:ss.S}] [%-8r] %highlight{[%-5p] [%-2T] [%F(%L)] %msg%n%throwable}</Property>
+        <Property name="LOG_PATTERN_COMPACT">[%d{yyyy-MM-dd/HH:mm:ss.S}:%highlight{%p:%T:%F(%L)] %msg%n%throwable}</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" disableAnsi="false"/>
+        </Console>
+
+        <RollingFile name="SpringBootLog"
+                     fileName="./logs/spring-boot.log"
+                     filePattern="./logs/spring-boot-%d{dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3" />
+        </RollingFile>
+
+        <RollingFile name="DebugLog"
+                     fileName="./logs/debug.log"
+                     filePattern="./logs/debug-%d{dd-MMMM-yyyy}-%i.log.gz">
+            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3" />
+        </RollingFile>
+
+        <RollingFile name="AppLog"
+                     fileName="./logs/synchordia.log"
+                     filePattern="./logs/synchordia-%d{dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3" />
+        </RollingFile>
+
+        <RollingFile name="AppLogJson"
+                     fileName="./logs/synchordia.json"
+                     filePattern="./logs/synchordia-%d{dd-MMMM-yyyy}-%i.json.gz">
+            <JsonTemplateLayout eventTemplateUri="classpath:EcsLayout.json"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3" />
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.catwithawand" level="ALL">
+            <AppenderRef ref="DebugLog" />
+            <AppenderRef ref="AppLog" />
+            <AppenderRef ref="AppLogJson" />
+        </Logger>
+
+        <Logger name="org.springframework.beans.factory" level="DEBUG">
+            <AppenderRef ref="SpringBootLog" />
+        </Logger>
+
+        <Logger name="org.springframework" level="INFO">
+            <AppenderRef ref="SpringBootLog" />
+        </Logger>
+
+        <Logger name="org.hibernate" level="INFO">
+            <AppenderRef ref="AppLog" />
+            <AppenderRef ref="AppLogJson" />
+        </Logger>
+
+        <Logger name="org.hsqldb" level="INFO">
+            <AppenderRef ref="AppLog" />
+            <AppenderRef ref="AppLogJson" />
+        </Logger>
+
+        <Logger name="org.jaudiotagger" level="OFF" />
+
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+
+</Configuration>

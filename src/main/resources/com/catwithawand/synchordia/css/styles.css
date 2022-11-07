@@ -1,0 +1,475 @@
+/* ----- */
+/* FONTS */
+/* ----- */
+
+@font-face {
+    -fx-font-family: 'Montserrat Thin';
+    -fx-font-weight: 100;
+    src: url('../fonts/Montserrat/Montserrat-Thin.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat Light';
+    -fx-font-weight: 300;
+    src: url('../fonts/Montserrat/Montserrat-Light.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat Regular';
+    -fx-font-weight: 400;
+    src: url('../fonts/Montserrat/Montserrat-Regular.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat Medium';
+    -fx-font-weight: 500;
+    src: url('../fonts/Montserrat/Montserrat-Medium.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat SemiBold';
+    -fx-font-weight: 600;
+    src: url('../fonts/Montserrat/Montserrat-SemiBold.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat Bold';
+    -fx-font-weight: 700;
+    src: url('../fonts/Montserrat/Montserrat-Bold.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Montserrat Black';
+    -fx-font-weight: 900;
+    src: url('../fonts/Montserrat/Montserrat-Black.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Metropolis Bold';
+    -fx-font-weight: 700;
+    src: url('../fonts/Metropolis/Metropolis-Bold.otf');
+}
+
+@font-face {
+    -fx-font-family: 'Metropolis Black';
+    -fx-font-weight: 900;
+    src: url('../fonts/Metropolis/Metropolis-Black.otf');
+}
+
+/* ------- */
+/* GLOBALS */
+/* ------- */
+
+/** {*/
+/*    !* Used for debugging *!*/
+/*    -fx-border-color: red;*/
+/*}*/
+#root > * {
+    -fx-background-insets: 0px;
+}
+
+.bg-transparent {
+    -fx-background-color: transparent;
+}
+
+.bg-primary {
+    -fx-background-color: -background-primary;
+}
+
+.bg-secondary {
+    -fx-background-color: -background-secondary;
+}
+
+.bg-tertiary {
+    -fx-background-color: -background-tertiary;
+}
+
+.bg-quaternary {
+    -fx-background-color: -background-quaternary;
+}
+
+.bg-black {
+    -fx-background-color: #000000;
+}
+
+.rounded-md {
+    -fx-background-radius: 6px;
+}
+
+.rounded-lg {
+    -fx-background-radius: 8px;
+}
+
+.rounded-xl {
+    -fx-background-radius: 12px;
+}
+
+/* ---------------- */
+/* MAIN APPLICATION */
+/* ---------------- */
+
+#center-grid-pane {
+    -fx-padding: 0px 0px 0px 12px;
+}
+
+#main-content-scroll-pane {
+    -fx-padding: 0px 0px 0px 0px;
+    -fx-background-color: -background-quaternary;
+}
+
+/* -------- */
+/* TOP BAR */
+/* -------- */
+
+#topbar {
+    -fx-background-color: #000000;
+    -fx-background-radius: 8px 8px 0px 0px;
+}
+
+#settings-and-logo-container {
+    -fx-padding: 0px 0px 0px 11px;
+}
+
+#settings-button {
+    -fx-background-color: transparent;
+    -fx-min-height: 1.4em;
+    -fx-max-height: 1.4em;
+}
+
+#window-controls {
+    -fx-icon-color: #ffffff;
+    -fx-alignment: center;
+    -fx-font-size: 1.45em;
+}
+
+.window-control-btn {
+    -fx-background-color: -window-control-normal;
+    -fx-alignment: center;
+}
+
+.window-control-btn:hover {
+    -fx-background-color: -window-control-hover;
+}
+
+.window-control-icon {
+    -fx-icon-color: -window-control-icon;
+    -fx-icon-size: 1em;
+}
+
+#close-btn {
+    -fx-background-radius: 0px 8px 0px 0px;
+}
+
+#close-btn:hover {
+    -fx-background-color: -window-control-close-button;
+}
+
+/* -------- */
+/* SIDE BAR */
+/* -------- */
+
+#sidebar {
+    -fx-background-color: -background-quaternary;
+    -fx-background-radius: 8px;
+    -fx-padding: 16px 0px 0px 0px;
+}
+
+#sidebar-top {
+    -fx-padding: 7px 0px 0px 0px;
+    -fx-spacing: 8px;
+}
+
+#search-box {
+    -fx-background-color: -background-primary;
+    -fx-background-radius: 8px;
+    -fx-font-family: "Montserrat SemiBold";
+    -fx-text-fill: -interactive-normal;
+    -fx-prompt-text-fill: -text-muted;
+}
+
+#search-box:focused {
+    -fx-background-color: -background-primary;
+    -fx-text-fill: -interactive-active;
+    -fx-effect: dropshadow(three-pass-box, -interactive-active, 2, 0, 0, 0);
+}
+
+#search-box-icon {
+    -fx-icon-color: -interactive-normal;
+}
+
+#sidebar-navigation {
+    -fx-spacing: 8px;
+}
+
+.navigation-button {
+    -fx-padding: 0px 0px 0px 5px;
+    -fx-min-height: 1.4em;
+    -fx-max-height: 1.4em;
+}
+
+.navigation-button > .simple-action-button-text {
+    -fx-translate-y: 1px;
+    -fx-translate-x: 10px;
+}
+
+#sidebar-divider {
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+    -fx-background-color: -divider;
+}
+
+/* ---------- */
+/* BOTTOM BAR */
+/* ---------- */
+
+#bottombar {
+    -fx-background-color: #000000;
+    -fx-background-radius: 0px 0px 8px 8px;
+    -fx-padding: 0 1.55em 0 1.55em;
+    -fx-min-height: 7.5em;
+    -fx-max-height: 7.5em;
+}
+
+#track-image-view {
+    -fx-effect: dropshadow(three-pass-box, #141414, 15, 0.1, 0, 0);
+}
+
+#track-info-labels {
+    -fx-padding: 0px 0px 0px 13px;
+}
+
+#track-title-label {
+    -fx-fill: -text-normal;
+}
+
+#track-artist-label {
+    -fx-fill: -text-muted;
+}
+
+.track-time-text {
+    -fx-fill: -text-muted;
+}
+
+#music-playback-controls {
+    -fx-alignment: bottom-center;
+    -fx-spacing: 1.2em;
+    -fx-padding: 0.5em 0 0 0;
+}
+
+.shuffle-repeat-buttons {
+    -fx-font-size: 1.5em;
+}
+
+.skip-buttons {
+    -fx-font-size: 2.7em;
+}
+
+.playback-icon {
+    -fx-icon-color: -playback-button-normal;
+    -fx-icon-size: 1em;
+}
+
+.playback-icon:hover {
+    -fx-icon-color: -playback-button-hover;
+}
+
+#main-play-pause-button {
+    -fx-background-color: #000000;
+    -fx-background-radius: 1000px;
+    -fx-background-insets: 10px;
+    -fx-max-width: 2em;
+    -fx-max-height: 2em;
+}
+
+#main-play-pause-button .play-pause-button-icon {
+    -fx-font-size: 3.2em;
+    -fx-icon-color: -interactive-normal;
+}
+
+#track-progress-slider {
+    -fx-min-height: 0.6em;
+    -fx-max-height: 0.6em;
+    -fx-max-width: 41.5em;
+}
+
+.custom-slider .slider .thumb {
+    -fx-opacity: 0;
+}
+
+.custom-slider .slider .thumb:hover {
+    -fx-opacity: 1;
+}
+
+.custom-slider .slider .thumb:pressed {
+    -fx-opacity: 1;
+}
+
+#music-extra-controls {
+    -fx-alignment: center-right;
+    -fx-spacing: 0.8em;
+}
+
+.extra-controls-button {
+    -fx-alignment: center;
+    -fx-font-size: 1.8em;
+}
+
+.extra-controls-icon {
+    -fx-icon-color: -playback-button-normal;
+    -fx-icon-size: 1em;
+}
+
+.extra-controls-icon:hover {
+    -fx-icon-color: -playback-button-hover;
+}
+
+#music-volume-slider {
+    -fx-min-height: 0.6em;
+    -fx-max-height: 0.6em;
+    -fx-min-width: 8.5em;
+    -fx-max-width: 8.5em;
+}
+
+/* ---------- */
+/*    CARD    */
+/* ---------- */
+
+.card-container {
+    -fx-background-color: -card-background;
+    -fx-background-radius: 8px;
+    -fx-padding: 11px 16px 8px 16px;
+    -fx-min-height: 222px;
+    -fx-max-height: 294px;
+    -fx-min-width: 144px;
+    -fx-max-width: 210px;
+}
+
+.card-container:hover {
+    -fx-background-color: -card-background-hover;
+}
+
+.card-image-container {
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 24, 0, 0, 8);
+}
+
+.card-container .play-pause-button {
+    -fx-background-color: #000000;
+    -fx-background-radius: 1000px;
+    -fx-background-insets: 10px;
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-max-width: 48px;
+    -fx-max-height: 48px;
+    -fx-alignment: center;
+    -fx-translate-x: -3px;
+}
+
+.card-container .play-pause-button-icon {
+    -fx-font-size: 4.9em;
+    -fx-icon-color: -theme-accent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 8, 0, 0, 8);
+}
+
+.card-container .card-play-icon:pressed {
+    -fx-icon-color: derive(-theme-accent, -30%);
+}
+
+.card-text-container {
+    -fx-padding: 11px 0px 9px 0px;
+    -fx-spacing: 11px;
+    -fx-alignment: top-left;
+}
+
+.card-title {
+    -fx-text-fill: -text-normal;
+    -fx-font-family: 'Metropolis Bold';
+    -fx-font-size: 1.3em;
+}
+
+.card-description {
+    -fx-text-fill: -text-muted;
+    -fx-font-family: 'Montserrat Medium';
+    -fx-font-size: 1.1em;
+}
+
+/* ---------- */
+/*   SWITCH   */
+/* ---------- */
+
+.toggle-switch .thumb-area {
+    -fx-background-color: -switch-background-normal;
+}
+
+.toggle-switch:hover .thumb-area {
+    -fx-background-color: -switch-background-hover;
+}
+
+.toggle-switch:selected .thumb-area {
+    -fx-background-color: -theme-accent;
+}
+
+.toggle-switch:hover:selected .thumb-area {
+    -fx-background-color: derive(-theme-accent, 10%);
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: -switch-thumb;
+}
+
+/* ---------------------- */
+/*  SIMPLE ACTION BUTTON  */
+/* ---------------------- */
+
+.simple-action-button {
+    -fx-background-radius: 8px;
+    -fx-font-size: 2em;
+}
+
+.simple-action-button:hover {
+    -fx-background-color: -navigation-button-hover;
+}
+
+.simple-action-button:focused {
+    -fx-background-color: -navigation-button-active;
+}
+
+.simple-action-button-icon {
+    -fx-icon-size: 1em;
+}
+
+.simple-action-button-text {
+    -fx-font-family: 'Metropolis Black';
+    -fx-font-size: 1.1em;
+}
+
+/* ---------- */
+/*   SLIDER   */
+/* ---------- */
+
+.slider {
+    -fx-min-height: 0.6em;
+    -fx-pref-height: 0.6em;
+}
+
+.slider .track {
+    -fx-pref-height: 0.2em;
+    -fx-max-height: 0.2em;
+}
+
+.slider .thumb {
+    -fx-pref-height: 1em;
+    -fx-max-height: 1em;
+    -fx-pref-width: 1em;
+    -fx-max-width: 1em;
+    -fx-background-color: white;
+}
+
+/* ---------- */
+/*  SETTINGS  */
+/* ---------- */
+
+#settings-root {
+    -fx-background-insets: 0;
+}
+

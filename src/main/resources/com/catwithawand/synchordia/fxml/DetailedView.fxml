@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                <VBox prefHeight="150.0" prefWidth="401.0">
+                    <children>
+                        <Label text="Title"/>
+                        <Label text="Type"/>
+                        <HBox layoutX="10.0" layoutY="44.0" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Artist"/>
+                                <Separator prefHeight="17.0" prefWidth="19.0"/>
+                                <Label text="Year"/>
+                                <Label text="No. of songs"/>
+                                <Label text="Total duration"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <HBox maxHeight="-Infinity" prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0"/>
+                <VBox prefHeight="200.0" prefWidth="100.0"/>
+            </children>
+        </HBox>
+    </center>
+    <bottom>
+        <VBox>
+            <children>
+                <HBox>
+                    <Label text="#"/>
+                    <HBox>
+                        <Label text="Title"/>
+                    </HBox>
+                    <Label text="Album"/>
+                    <Label text="Duration"/>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
